@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Application",
+            "request": "launch",
+            "mainClass": "eu.miaplatform.customplugin.springboot.Application",
+            "projectName": "%CUSTOM_PLUGIN_PROJECT_NAME%"
+        }
+    ]
+}
