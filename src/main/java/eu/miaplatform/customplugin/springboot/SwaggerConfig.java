@@ -64,5 +64,4 @@ public class SwaggerConfig extends CPSwaggerConfig {
         return "info@mia-platform.eu";
     }
 
-
 }
