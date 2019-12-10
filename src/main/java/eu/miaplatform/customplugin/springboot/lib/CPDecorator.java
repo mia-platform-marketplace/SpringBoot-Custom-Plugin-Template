@@ -52,7 +52,6 @@ public class CPDecorator {
         return registration;
     }
 
-
     protected FilterRegistrationBean addPreDecorator(String path, Function<CPRequestWrapper, CPRequestWrapper> preHandler) {
 
         FilterRegistrationBean registration = new FilterRegistrationBean();
