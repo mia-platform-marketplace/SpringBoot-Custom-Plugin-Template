@@ -32,23 +32,10 @@ public class LoggingInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
-        //logger.info("preHandle - request [" + request + "]");
-
-        /*Enumeration<String> headerNames = request.getHeaderNames();
-        while (headerNames.hasMoreElements()) {
-            logger.info("headerName = " + headerNames.nextElement());
-        }*/
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-
-        //logger.info("postHandle - response [" + response + "]");
-
-        /*for (String s : response.getHeaderNames()) {
-            logger.info("headerName = " + s);
-        }*/
     }
 }
