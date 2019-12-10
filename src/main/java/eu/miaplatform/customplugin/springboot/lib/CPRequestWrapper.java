@@ -118,7 +118,6 @@ public class CPRequestWrapper extends HttpServletRequestWrapper {
         return getParameterMap().get(name);
     }
 
-
     public String getPath() {
         return this.getServletPath();
     }

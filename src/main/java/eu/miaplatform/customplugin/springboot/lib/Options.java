@@ -30,6 +30,7 @@ public class Options {
         this.backofficeHeaderKey = "BACKOFFICE_HEADER_KEY";
         this.microserviceGatewayServiceName = "MICROSERVICE_HEADER_KEY";
     }
+
     public Options(String userIdHeaderKey, String groupsHeaderKey, String clientTypeHeaderKey, String backofficeHeaderKey, String microserviceGatewayServiceName) {
         this.userIdHeaderKey = userIdHeaderKey;
         this.groupsHeaderKey = groupsHeaderKey;
