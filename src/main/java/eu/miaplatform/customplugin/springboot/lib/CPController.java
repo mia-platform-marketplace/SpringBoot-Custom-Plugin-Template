@@ -57,7 +57,6 @@ public abstract class CPController {
         return readinessHandler(cpRequest);
     }
 
-
     public ResponseEntity healthinessHandler (CPRequest cpRequest) {
         return CPStatus.statusOk(new CPStatusBody());
     }
