@@ -6,7 +6,7 @@
 
     <groupId>%CUSTOM_PLUGIN_PROJECT_NAMESPACE%</groupId>
     <artifactId>%CUSTOM_PLUGIN_PROJECT_NAME%</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>%CUSTOM_PLUGIN_SERVICE_NAME%</name>
@@ -26,6 +26,31 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+    <scm>
+        <url>https://github.com/mia-platform/custom-plugin-java-springboot</url>
+        <connection>scm:git@github.com:mia-platform/custom-plugin-java-springboot.git</connection>
+        <developerConnection>scm:git@github.com:mia-platform/custom-plugin-java-springboot.git</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>snapshots-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases><enabled>false</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -45,7 +70,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <executable>true</executable>
-                    <finalName>%CUSTOM_PLUGIN_PROJECT_NAME%-latest-SNAPSHOT</finalName>
                 </configuration>
             </plugin>
             <plugin>
@@ -64,7 +88,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.0.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -192,8 +216,8 @@
         </dependency>
         <dependency>
             <groupId>eu.mia-platform</groupId>
-            <artifactId>custom-plugin-java</artifactId>
-            <version>0.0.4</version>
+            <artifactId>custom-plugin-java-springboot</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
