@@ -16,8 +16,8 @@
 
 package eu.miaplatform.customplugin.springboot;
 
-import eu.miaplatform.customplugin.springboot.lib.Options;
-import eu.miaplatform.customplugin.springboot.lib.CPRequest;
+import eu.miaplatform.customplugin.springboot.Options;
+import eu.miaplatform.customplugin.springboot.CPRequest;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
