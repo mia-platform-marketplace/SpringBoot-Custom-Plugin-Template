@@ -26,6 +26,7 @@ public class Application {
     //Run mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=8000 to change server port
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(Application.class);
+        app.addListeners(new GracefulShutdown());
         app.run(args);
     }
 }
