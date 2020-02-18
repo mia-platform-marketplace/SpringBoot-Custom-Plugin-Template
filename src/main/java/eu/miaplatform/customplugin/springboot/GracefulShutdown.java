@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class GracefulShutdown implements ApplicationListener<ContextClosedEvent> {
 
-    @Value("${delay.shutdown.seconds:0}")
+    @Value("${delay.shutdown.seconds:10}")
     private Long delayShutdownSeconds;
 
     @Override
