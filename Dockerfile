@@ -27,10 +27,10 @@ FROM openjdk:8u171-jre-alpine
 WORKDIR /usr/app
 
 # copy over the built artifact from the maven image
-COPY --from=build ./target/%CUSTOM_PLUGIN_PROJECT_NAME%-latest-SNAPSHOT.jar ./
+COPY --from=build ./target/%CUSTOM_PLUGIN_SERVICE_NAME%-0.0.1-SNAPSHOT.jar ./
 
 COPY --from=build ./commit.sha ./commit.sha
 
 COPY --from=build ./LICENSE ./LICENSE
 
-CMD ["java","-jar","./%CUSTOM_PLUGIN_PROJECT_NAME%-0.0.1-SNAPSHOT.jar"]
+CMD ["java","-jar","./%CUSTOM_PLUGIN_SERVICE_NAME%-0.0.1-SNAPSHOT.jar"]
