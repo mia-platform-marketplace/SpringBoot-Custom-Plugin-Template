@@ -1,36 +1,28 @@
-FROM maven:3.6.3-jdk-8 as build
+FROM alpine AS build
 
 ARG COMMIT_SHA=<not-specified>
+ARG BUILD_FILE_NAME=%CUSTOM_PLUGIN_SERVICE_NAME%-latest-SNAPSHOT
 
-# copy the project files
-COPY ./pom.xml ./pom.xml
+WORKDIR /build
 
-COPY ./LICENSE ./LICENSE
-
-# build all dependencies for offline use
-RUN mvn dependency:go-offline -B
-
-# copy your other files
-COPY ./src ./src
-
-# build for release
-RUN mvn package
+COPY ./target/${BUILD_FILE_NAME}.jar ./application.jar
+COPY LICENSE .
 
 RUN echo "service-name: $COMMIT_SHA" >> ./commit.sha
 
-###############################################################################
+FROM openjdk:8-jre-slim
 
-# our final base image
-FROM openjdk:8u171-jre-alpine
+LABEL maintainer="%CUSTOM_PLUGIN_CREATOR_USERNAME%" \
+      name="%CUSTOM_PLUGIN_SERVICE_NAME%" \
+      description="%CUSTOM_PLUGIN_SERVICE_DESCRIPTION%" \
+      eu.mia-platform.url="https://www.mia-platform.eu" \
+      eu.mia-platform.version="0.1.0"
 
 # set deployment directory
-WORKDIR /usr/app
+WORKDIR /home/java/app
 
-# copy over the built artifact from the maven image
-COPY --from=build ./target/%CUSTOM_PLUGIN_SERVICE_NAME%-0.0.1-SNAPSHOT.jar ./
+COPY --from=build /build .
 
-COPY --from=build ./commit.sha ./commit.sha
+USER 1000
 
-COPY --from=build ./LICENSE ./LICENSE
-
-CMD ["java","-jar","./%CUSTOM_PLUGIN_SERVICE_NAME%-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "./application.jar"]
