@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>%CUSTOM_PLUGIN_PROJECT_NAMESPACE%</groupId>
-    <artifactId>%CUSTOM_PLUGIN_SERVICE_NAME%</artifactId>
+    <groupId>mia_template_project_id_placeholder</groupId>
+    <artifactId>mia_template_service_name_placeholder</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>%CUSTOM_PLUGIN_SERVICE_NAME%</name>
+    <name>mia_template_service_name_placeholder</name>
     <description>%CUSTOM_PLUGIN_SERVICE_DESCRIPTION%</description>
     <url>%CUSTOM_PLUGIN_PROJECT_GITLAB_PATH%</url>
     <developers>
@@ -30,7 +30,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.7.RELEASE</version>
+        <version>2.3.0.RELEASE</version>
     </parent>
 
     <properties>

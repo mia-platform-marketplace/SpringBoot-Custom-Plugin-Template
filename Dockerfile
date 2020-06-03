@@ -1,7 +1,7 @@
 FROM alpine AS build
 
 ARG COMMIT_SHA=<not-specified>
-ARG BUILD_FILE_NAME=%CUSTOM_PLUGIN_SERVICE_NAME%
+ARG BUILD_FILE_NAME=mia_template_service_name_placeholder
 
 WORKDIR /build
 
@@ -13,7 +13,7 @@ RUN echo "service-name: $COMMIT_SHA" >> ./commit.sha
 FROM openjdk:8-jre-slim
 
 LABEL maintainer="%CUSTOM_PLUGIN_CREATOR_USERNAME%" \
-      name="%CUSTOM_PLUGIN_SERVICE_NAME%" \
+      name="mia_template_service_name_placeholder" \
       description="%CUSTOM_PLUGIN_SERVICE_DESCRIPTION%" \
       eu.mia-platform.url="https://www.mia-platform.eu" \
       eu.mia-platform.version="0.1.0"
