@@ -25,7 +25,7 @@ jobs:
     - name: Test with Maven
       run: mvn test
 
-    - run: mvn clean test jacoco:report coveralls:report
+    - run: mvn clean test jacoco:report
 
     - name: Coveralls
       uses: coverallsapp/github-action@master
