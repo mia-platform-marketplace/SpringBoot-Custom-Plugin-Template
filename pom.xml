@@ -137,6 +137,21 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <environmentVariables>
+                        <LOG_LEVEL>trace</LOG_LEVEL>
+                        <HTTP_PORT>3000</HTTP_PORT>
+                        <USERID_HEADER_KEY>miauserid</USERID_HEADER_KEY>
+                        <GROUPS_HEADER_KEY>miausergroups</GROUPS_HEADER_KEY>
+                        <CLIENTTYPE_HEADER_KEY>miaclienttype</CLIENTTYPE_HEADER_KEY>
+                        <BACKOFFICE_HEADER_KEY>isbackoffice</BACKOFFICE_HEADER_KEY>
+                        <MICROSERVICE_GATEWAY_SERVICE_NAME>microservice-gateway</MICROSERVICE_GATEWAY_SERVICE_NAME>
+                    </environmentVariables>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
