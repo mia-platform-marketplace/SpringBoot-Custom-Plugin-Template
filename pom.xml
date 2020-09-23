@@ -167,8 +167,8 @@
         </dependency>
         <dependency>
             <groupId>eu.mia-platform</groupId>
-            <artifactId>custom-plugin-java-springboot</artifactId>
-            <version>0.0.2</version>
+            <artifactId>mia-service-java-springboot-library</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
