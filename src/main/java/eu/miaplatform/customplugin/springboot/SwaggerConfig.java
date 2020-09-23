@@ -62,4 +62,9 @@ public class SwaggerConfig extends CPSwaggerConfig {
     public String getContactEmail() {
         return "info@mia-platform.eu";
     }
+
+    @Override
+    public String getSelector() {
+        return "eu.miaplatform.customplugin.springboot";
+    }
 }
