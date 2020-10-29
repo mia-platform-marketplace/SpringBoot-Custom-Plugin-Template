@@ -16,12 +16,10 @@
 
 package eu.miaplatform.customplugin.springboot;
 
-import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Api(value = "Status Routes")
 public class StatusController extends CPStatusController {
     /**
      *  Customize methods below to perform specific behaviours
