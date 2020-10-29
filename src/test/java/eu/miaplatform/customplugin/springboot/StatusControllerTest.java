@@ -25,8 +25,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -39,26 +39,23 @@ public class StatusControllerTest {
     public void defaultReadinessRoute() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/-/ready"))
                 .andExpect(status().isOk())
-                .andExpect(content().json(
-                        "{\"name\":\"Custom Plugin Spring Boot REST API\",\"version\":\"0.0.1-SNAPSHOT\",\"status\":\"OK\"}"
-                ));
+                .andExpect(jsonPath("$.name").value( "Custom Plugin Spring Boot REST API"))
+                .andExpect(jsonPath("$.status").value( "OK"));
     }
 
     @Test
     public void defaultLivenessRoute() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/-/healthz"))
                 .andExpect(status().isOk())
-                .andExpect(content().json(
-                        "{\"name\":\"Custom Plugin Spring Boot REST API\",\"version\":\"0.0.1-SNAPSHOT\",\"status\":\"OK\"}"
-                ));
+                .andExpect(jsonPath("$.name").value( "Custom Plugin Spring Boot REST API"))
+                .andExpect(jsonPath("$.status").value( "OK"));
     }
 
     @Test
     public void defaultCheckUpRoute() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/-/check-up"))
                 .andExpect(status().isOk())
-                .andExpect(content().json(
-                        "{\"name\":\"Custom Plugin Spring Boot REST API\",\"version\":\"0.0.1-SNAPSHOT\",\"status\":\"OK\"}"
-                ));
+                .andExpect(jsonPath("$.name").value( "Custom Plugin Spring Boot REST API"))
+                .andExpect(jsonPath("$.status").value( "OK"));
     }
 }
