@@ -25,7 +25,6 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class CPRequestTest {
-
     private CPRequest cpRequest;
     private Options options = new Options();
     private String id = "1234";
