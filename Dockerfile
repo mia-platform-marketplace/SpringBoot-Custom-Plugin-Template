@@ -10,7 +10,7 @@ COPY LICENSE .
 
 RUN echo "service-name: $COMMIT_SHA" >> ./commit.sha
 
-FROM openjdk:8-jre-slim
+FROM openjdk:11-jre-slim
 
 LABEL maintainer="%CUSTOM_PLUGIN_CREATOR_USERNAME%" \
       name="mia_template_service_name_placeholder" \

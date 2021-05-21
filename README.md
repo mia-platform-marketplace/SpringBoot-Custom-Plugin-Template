@@ -4,6 +4,10 @@
 
 This walkthrough will explain you how to correctly create a microservice from a Springboot Template using our DevOps Console.
 
+## Current Version
+
+This example is currently based on Java SE 11 (LTS)
+
 ## Create a microservice
 
 In order to do so, access to [Mia-Platform DevOps Console](https://console.cloud.mia-platform.eu/login), create a new project and go to the **Design** area.  
