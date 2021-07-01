@@ -1,6 +1,51 @@
-# Tag Project
+# mia_template_service_name_placeholder
 
-## Run script
+Welcome to Java SpringBoot template service for Mia-Platform!
+
+## How to develop this service
+
+This example jus expose hello endpoint.
+
+### Run locally
+
+Before running the service on your local machine you need to prepare the required environment variables
+
+```bash
+cp default.env local.env
+set -a; source local.env
+```
+
+To run locally this example just run the following command
+
+```bash
+mvn spring-boot:run
+```
+
+To change server port
+
+```bash
+mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=8000
+```
+
+To launch tests locally
+
+```bash
+mvn test
+```
+
+To build it
+
+```bash
+mvn clean package
+```
+
+To force mvn package update
+
+```bash
+mvn clean install -U
+```
+
+# Tag Project
 
 ### Tag new project version
 

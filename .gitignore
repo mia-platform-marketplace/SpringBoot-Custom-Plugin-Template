@@ -522,3 +522,5 @@ MigrationBackup/
 # End of https://www.gitignore.io/api/linux,macos,maven,kotlin,intellij,visualstudio
 .m2/**
 !.m2/settings.xml
+
+local.env
